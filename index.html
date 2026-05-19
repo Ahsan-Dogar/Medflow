@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEDFLOW</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="frost">
+
+<header>
+  <div class="logo">
+    <div class="logo-name">MED<span>FLOW</span></div>
+    <div class="logo-by">by Ahsan</div>
+  </div>
+  <div class="header-actions">
+    <button class="theme-btn" onclick="cycleTheme()" title="Change theme">
+      <span class="theme-dot"></span>
+      <span id="theme-label">Frost</span>
+    </button>
+    
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+        <polyline points="14,2 14,8 20,8"></polyline>
+        <line x1="16" y1="13" x2="8" y2="13"></line>
+        <line x1="16" y1="17" x2="8" y2="17"></line>
+      
+    </button>
+  </div>
+</header>
+
+<div class="container">
+  <div class="hero">
+    <h1>Search any <em>medicine</em><br>instantly.</h1>
+    <p>Prices · Dosage · Side Effects · Interactions</p>
+  </div>
+
+  <div class="search-wrap">
+    <input class="search-input" id="search-input" type="text" placeholder="e.g. panadol, augmentin, brufen..." autocomplete="off">
+    <button class="search-btn" id="search-btn" onclick="doSearch()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <span>Search</span>
+    </button>
+  </div>
+
+  <!-- IDLE -->
+  <div id="view-idle">
+    <div class="idle-wrap">
+      <div class="idle-hint">Type a medicine name above to get started</div>
+    </div>
+  </div>
+
+  <!-- LOADING -->
+  <div id="view-loading" style="display:none">
+    <div class="state-box">
+      <div style="margin-bottom:0.85rem">
+        <span class="spinner" style="width:26px;height:26px;border:3px solid var(--border);border-top-color:var(--accent)"></span>
+      </div>
+      <div style="color:var(--muted);font-size:0.82rem">Searching...</div>
+    </div>
+  </div>
+
+  <!-- EMPTY -->
+  <div id="view-empty" style="display:none">
+    <div class="state-box">
+      <div class="state-icon">🔍</div>
+      <div id="empty-msg" style="color:var(--muted)">No results found.</div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="view-results" style="display:none">
+    <div class="results-header">
+      <span class="results-label">Results</span>
+      <span class="results-count" id="results-count"></span>
+    </div>
+    <div class="results-grid" id="results-list"></div>
+  </div>
+
+  <!-- DETAIL LOADING -->
+  <div id="view-detail-loading" style="display:none">
+    <div class="state-box">
+      <div style="margin-bottom:0.85rem">
+        <span class="spinner" style="width:26px;height:26px;border:3px solid var(--border);border-top-color:var(--accent)"></span>
+      </div>
+      <div style="color:var(--muted);font-size:0.82rem">Loading details...</div>
+    </div>
+  </div>
+
+  <!-- DETAIL -->
+  <div id="view-detail" style="display:none">
+    <button class="detail-back" onclick="showResults()">← Back to results</button>
+    <div class="detail-hero">
+      <div class="detail-name" id="detail-name"></div>
+      <div class="detail-meta">
+        <span class="detail-price" id="detail-price"></span>
+        <span class="detail-discount" id="detail-discount" style="display:none"></span>
+      </div>
+    </div>
+    <div class="detail-sections" id="detail-sections"></div>
+  </div>
+</div>
+
+<footer>MEDFLOW by Ahsan �·� Medicine Info API �·� CORS Enabled</footer>
+
+<!-- DOCS MODAL -->
+
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
