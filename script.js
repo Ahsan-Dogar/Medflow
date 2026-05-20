@@ -1,8 +1,17 @@
 const BASE = (function() {
   const origin = window.location.origin;
-  if (origin === 'null' || origin === 'file://' || location.protocol === 'file:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+  // Agar localhost/file ho ya production mein koi aur domain ho, to hamesha API ka domain use karo
+  if (
+    origin === 'null' ||
+    origin === 'file://' ||
+    location.protocol === 'file:' ||
+    location.hostname === 'localhost' ||
+    location.hostname === '127.0.0.1' ||
+    !origin.includes('medster.vercel.app')   // ✅ agar origin API domain nahi hai to bhi API use karo
+  ) {
     return 'https://medster.vercel.app';
   }
+  // Agar app khud medster.vercel.app par hosted hai to origin hi use karo (waise bhi same rahega)
   return origin;
 })();
 
