@@ -6,6 +6,8 @@
 
 A sleek, multi-theme web interface for searching medicines. Get instant details: **price**, **dosage**, **side effects**, and **drug interactions** — zero dependencies, works offline, deploy anywhere.
 
+[![View Live Demo](https://img.shields.io/badge/🚀-View_Live_Demo-00C853?style=flat-square)](https://ahsan-dogar.github.io/Medflow/)
+
 [![Status](https://img.shields.io/badge/status-live-brightgreen)]()
 [![Dependencies](https://img.shields.io/badge/dependencies-zero-blue)]()
 [![Platform](https://img.shields.io/badge/platform-static-HTML/CSS/JS-lightgrey)]()
